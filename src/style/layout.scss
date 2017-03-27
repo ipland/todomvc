@@ -1,0 +1,18 @@
+:global {
+
+@import 'variable';
+
+body {
+  display: flex;
+  justify-content: center;
+  background: $color-primary;
+}
+
+.app--center {
+  margin-top: 80px;
+  border-radius: 24px;
+  background: $color-secondary;
+  box-shadow: 0 0 5px rgba(25, 25, 25, 0.25);
+}
+
+}
