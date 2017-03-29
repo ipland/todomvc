@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import TodoList from './TodoList'
+import TodoList from './TodoList.jsx'
 import { SHOW_ALL, SHOW_COMPLETED, SHOW_INCOMPLETED } from '../visibilityFilter/constants'
 import { toggleTodo, removeTodo } from './actions'
 

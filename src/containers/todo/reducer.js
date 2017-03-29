@@ -20,9 +20,14 @@ function toggleTodo(state, payload) {
   return Object.assign({}, state, { completed: !state.completed })
 }
 
+function addTodo(state, payload) {
+  let index = Math.random() * state.length | 0
+  return [].concat(state.slice(0, index), newTodo(undefined, payload), state.slice(index))
+}
+
 const initialState = []
 export default createReducer(initialState, {
-  [ADD_TODO]: (state, payload) => ( state.concat(newTodo(undefined, payload)) ),
+  [ADD_TODO]: (state, payload) => ( addTodo(state, payload) ),
   [TOGGLE_TODO]: (state, payload) => ( state.map(t => toggleTodo(t, payload)) ),
   [REMOVE_TODO]: (state, payload) => ( state.filter( t=> t.id !== payload.id) ),
   [RESET_STATE]: (state, payload) => payload

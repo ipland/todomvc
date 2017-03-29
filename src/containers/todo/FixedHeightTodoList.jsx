@@ -43,15 +43,11 @@ function transformTodos(todos) {
   }))
 }
 
-function transfromStyle(style) {
-  const _style = Object.assign({}, style, {
-    WebkitTransform: `translate3d(${style.x}px,0,0)`,
-    transform: `translate3d(${style.x}px,0,0)`
+function transfromStyle({ x, ...rest }) {
+  return Object.assign({}, rest, {
+    WebkitTransform: `translate3d(${x}px,0,0)`,
+    transform: `translate3d(${x}px,0,0)`
   })
-
-  delete _style.x
-
-  return _style
 }
 
 
